@@ -261,7 +261,7 @@
 						{
 							"fileName": "index.ts",
 							"line": 34,
-							"character": 50
+							"character": 40
 						}
 					]
 				},
@@ -283,12 +283,8 @@
 						}
 					],
 					"type": {
-						"type": "query",
-						"queryType": {
-							"type": "reference",
-							"id": 12,
-							"name": "Logger"
-						}
+						"type": "intrinsic",
+						"name": "any"
 					},
 					"defaultValue": "Logger"
 				},
