@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    logger: Logger;
+  }
+}
+
 export interface IDictionary<TValue> {
   [key: string]: TValue;
 }
@@ -27,6 +33,12 @@ export class Logger implements Console {
 
   constructor(ns: string = '') {
     this.namespaces.push(...ns.split('.'));
+
+    this.enableAll();
+
+    if (typeof window !== 'undefined' && !window.logger) {
+      window.logger = this;
+    }
   }
 
   // --- getters / setters
@@ -37,6 +49,7 @@ export class Logger implements Console {
 
   public get namespace(): string {
     return this.namespaces
+      .filter(Boolean)
       .map((ns: string): string => `[${ns.toLocaleUpperCase()}]`)
       .join(' ');
   }
@@ -76,13 +89,14 @@ export class Logger implements Console {
   }
 
   public noConflict(): Logger {
-    return this;
+    return window ? window.logger : this;
   }
 
   public assert(condition?: boolean, ...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.assert.call(console, condition, this.namespace, ...data);
+    console.assert.call(console, condition, ...data);
   }
 
   public clear(): void {
@@ -105,8 +119,9 @@ export class Logger implements Console {
 
   public debug(...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.debug.call(console, this.namespace, ...data);
+    console.debug.call(console, ...data);
   }
 
   public dir(item?: any, options?: any): void {
@@ -117,14 +132,16 @@ export class Logger implements Console {
 
   public dirxml(...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.dirxml.call(console, this.namespace, ...data);
+    console.dirxml.call(console, ...data);
   }
 
   public error(...data: any[]): void {
     if (!this.validate(LEVEL.ERROR)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.error.call(console, this.namespace, ...data);
+    console.error.call(console, ...data);
   }
 
   public exception(message?: string, ...optionalParams: any[]): void {
@@ -135,14 +152,16 @@ export class Logger implements Console {
 
   public group(...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.group.call(console, this.namespace, ...data);
+    console.group.call(console, ...data);
   }
 
   public groupCollapsed(...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.groupCollapsed.call(console, this.namespace, ...data);
+    console.groupCollapsed.call(console, ...data);
   }
 
   public groupEnd(): void {
@@ -153,14 +172,16 @@ export class Logger implements Console {
 
   public info(...data: any[]): void {
     if (!this.validate(LEVEL.INFO)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.info.call(console, this.namespace, ...data);
+    console.info.call(console, ...data);
   }
 
   public log(...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.log.call(console, this.namespace, ...data);
+    console.log.call(console, ...data);
   }
 
   public table(tabularData?: any, properties?: string[]): void {
@@ -183,8 +204,9 @@ export class Logger implements Console {
 
   public timeLog(label?: string, ...data: any[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.timeLog.call(console, label, this.namespace, ...data);
+    console.timeLog.call(console, label, ...data);
   }
 
   public timeStamp(label?: string): void {
@@ -195,14 +217,16 @@ export class Logger implements Console {
 
   public trace(...data: any[]): void {
     if (!this.validate(LEVEL.TRACE)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.trace.call(console, this.namespace, ...data);
+    console.trace.call(console, ...data);
   }
 
   public warn(...data: any[]): void {
     if (!this.validate(LEVEL.WARN)) return;
+    if (this.namespace) (data = data || []).unshift(this.namespace);
 
-    console.warn.call(console, this.namespace, ...data);
+    console.warn.call(console, ...data);
   }
 
   // ---

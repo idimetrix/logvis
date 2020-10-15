@@ -21,6 +21,7 @@
     - [Enumeration members](#enumeration-members)
 - [logvis](#logvis-1)
   - [Index](#index-2)
+    - [Namespaces](#namespaces)
     - [Enumerations](#enumerations)
     - [Classes](#classes-1)
     - [Interfaces](#interfaces)
@@ -32,10 +33,17 @@
     - [logger](#logger)
     - [namespaces](#namespaces)
 - [Interfaces](#interfaces-1)
+  - [Interface: Window](#interface-window)
+    - [Hierarchy](#hierarchy-1)
+    - [Index](#index-3)
+    - [Properties](#properties-1)
   - [Interface: IDictionary\<TValue>](#interface-idictionary%5Ctvalue)
     - [Type parameters](#type-parameters)
-    - [Hierarchy](#hierarchy-1)
+    - [Hierarchy](#hierarchy-2)
     - [Indexable](#indexable)
+- [Modules](#modules)
+  - [Namespace: \_\_global](#namespace-%5C_%5C_global)
+    - [Index](#index-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -143,7 +151,7 @@ $ yarn add logvis
 
 \+ **new Logger**(`ns`: string): [Logger](#classesloggermd)
 
-*Defined in [index.ts:26](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L26)*
+*Defined in [index.ts:32](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L32)*
 
 ##### Parameters:
 
@@ -159,7 +167,7 @@ Name | Type | Default value |
 
 • `Readonly` **LEVEL**: *typeof* [LEVEL](#enumslevelmd) = LEVEL
 
-*Defined in [index.ts:26](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L26)*
+*Defined in [index.ts:32](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L32)*
 
 ### Accessors
 
@@ -167,13 +175,13 @@ Name | Type | Default value |
 
 • get **level**(): [LEVEL](#level)
 
-*Defined in [index.ts:44](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L44)*
+*Defined in [index.ts:57](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L57)*
 
 **Returns:** [LEVEL](#level)
 
 • set **level**(`level`: [LEVEL](#level)): void
 
-*Defined in [index.ts:48](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L48)*
+*Defined in [index.ts:61](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L61)*
 
 ##### Parameters:
 
@@ -189,7 +197,7 @@ ___
 
 • get **memory**(): any
 
-*Defined in [index.ts:34](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L34)*
+*Defined in [index.ts:46](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L46)*
 
 **Returns:** any
 
@@ -199,7 +207,7 @@ ___
 
 • get **namespace**(): string
 
-*Defined in [index.ts:38](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L38)*
+*Defined in [index.ts:50](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L50)*
 
 **Returns:** string
 
@@ -209,7 +217,7 @@ ___
 
 ▸ **assert**(`condition?`: undefined \| false \| true, ...`data`: any[]): void
 
-*Defined in [index.ts:82](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L82)*
+*Defined in [index.ts:95](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L95)*
 
 ##### Parameters:
 
@@ -226,7 +234,7 @@ ___
 
 ▸ **clear**(): void
 
-*Defined in [index.ts:88](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L88)*
+*Defined in [index.ts:102](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L102)*
 
 **Returns:** void
 
@@ -236,7 +244,7 @@ ___
 
 ▸ **count**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:94](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L94)*
+*Defined in [index.ts:108](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L108)*
 
 ##### Parameters:
 
@@ -252,7 +260,7 @@ ___
 
 ▸ **countReset**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:100](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L100)*
+*Defined in [index.ts:114](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L114)*
 
 ##### Parameters:
 
@@ -268,7 +276,7 @@ ___
 
 ▸ **debug**(...`data`: any[]): void
 
-*Defined in [index.ts:106](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L106)*
+*Defined in [index.ts:120](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L120)*
 
 ##### Parameters:
 
@@ -284,7 +292,7 @@ ___
 
 ▸ **dir**(`item?`: any, `options?`: any): void
 
-*Defined in [index.ts:112](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L112)*
+*Defined in [index.ts:127](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L127)*
 
 ##### Parameters:
 
@@ -301,7 +309,7 @@ ___
 
 ▸ **dirxml**(...`data`: any[]): void
 
-*Defined in [index.ts:118](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L118)*
+*Defined in [index.ts:133](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L133)*
 
 ##### Parameters:
 
@@ -317,7 +325,7 @@ ___
 
 ▸ **disableAll**(): void
 
-*Defined in [index.ts:74](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L74)*
+*Defined in [index.ts:87](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L87)*
 
 **Returns:** void
 
@@ -327,7 +335,7 @@ ___
 
 ▸ **enableAll**(): void
 
-*Defined in [index.ts:70](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L70)*
+*Defined in [index.ts:83](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L83)*
 
 **Returns:** void
 
@@ -337,7 +345,7 @@ ___
 
 ▸ **error**(...`data`: any[]): void
 
-*Defined in [index.ts:124](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L124)*
+*Defined in [index.ts:140](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L140)*
 
 ##### Parameters:
 
@@ -353,7 +361,7 @@ ___
 
 ▸ **exception**(`message?`: undefined \| string, ...`optionalParams`: any[]): void
 
-*Defined in [index.ts:130](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L130)*
+*Defined in [index.ts:147](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L147)*
 
 ##### Parameters:
 
@@ -370,7 +378,7 @@ ___
 
 ▸ **getLogger**(`ns`: string): [Logger](#classesloggermd)
 
-*Defined in [index.ts:62](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L62)*
+*Defined in [index.ts:75](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L75)*
 
 ##### Parameters:
 
@@ -386,7 +394,7 @@ ___
 
 ▸ **getLoggers**(): [Dictionary](#dictionary)\<[Logger](#classesloggermd)>
 
-*Defined in [index.ts:66](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L66)*
+*Defined in [index.ts:79](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L79)*
 
 **Returns:** [Dictionary](#dictionary)\<[Logger](#classesloggermd)>
 
@@ -396,7 +404,7 @@ ___
 
 ▸ **group**(...`data`: any[]): void
 
-*Defined in [index.ts:136](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L136)*
+*Defined in [index.ts:153](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L153)*
 
 ##### Parameters:
 
@@ -412,7 +420,7 @@ ___
 
 ▸ **groupCollapsed**(...`data`: any[]): void
 
-*Defined in [index.ts:142](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L142)*
+*Defined in [index.ts:160](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L160)*
 
 ##### Parameters:
 
@@ -428,7 +436,7 @@ ___
 
 ▸ **groupEnd**(): void
 
-*Defined in [index.ts:148](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L148)*
+*Defined in [index.ts:167](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L167)*
 
 **Returns:** void
 
@@ -438,7 +446,7 @@ ___
 
 ▸ **info**(...`data`: any[]): void
 
-*Defined in [index.ts:154](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L154)*
+*Defined in [index.ts:173](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L173)*
 
 ##### Parameters:
 
@@ -454,7 +462,7 @@ ___
 
 ▸ **log**(...`data`: any[]): void
 
-*Defined in [index.ts:160](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L160)*
+*Defined in [index.ts:180](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L180)*
 
 ##### Parameters:
 
@@ -470,7 +478,7 @@ ___
 
 ▸ **noConflict**(): [Logger](#classesloggermd)
 
-*Defined in [index.ts:78](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L78)*
+*Defined in [index.ts:91](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L91)*
 
 **Returns:** [Logger](#classesloggermd)
 
@@ -480,7 +488,7 @@ ___
 
 ▸ **ns**(`ns`: string): [Logger](#classesloggermd)
 
-*Defined in [index.ts:54](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L54)*
+*Defined in [index.ts:67](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L67)*
 
 ##### Parameters:
 
@@ -496,7 +504,7 @@ ___
 
 ▸ **table**(`tabularData?`: any, `properties?`: string[]): void
 
-*Defined in [index.ts:166](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L166)*
+*Defined in [index.ts:187](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L187)*
 
 ##### Parameters:
 
@@ -513,7 +521,7 @@ ___
 
 ▸ **time**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:172](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L172)*
+*Defined in [index.ts:193](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L193)*
 
 ##### Parameters:
 
@@ -529,7 +537,7 @@ ___
 
 ▸ **timeEnd**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:178](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L178)*
+*Defined in [index.ts:199](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L199)*
 
 ##### Parameters:
 
@@ -545,7 +553,7 @@ ___
 
 ▸ **timeLog**(`label?`: undefined \| string, ...`data`: any[]): void
 
-*Defined in [index.ts:184](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L184)*
+*Defined in [index.ts:205](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L205)*
 
 ##### Parameters:
 
@@ -562,7 +570,7 @@ ___
 
 ▸ **timeStamp**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:190](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L190)*
+*Defined in [index.ts:212](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L212)*
 
 ##### Parameters:
 
@@ -578,7 +586,7 @@ ___
 
 ▸ **trace**(...`data`: any[]): void
 
-*Defined in [index.ts:196](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L196)*
+*Defined in [index.ts:218](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L218)*
 
 ##### Parameters:
 
@@ -594,7 +602,7 @@ ___
 
 ▸ **warn**(...`data`: any[]): void
 
-*Defined in [index.ts:202](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L202)*
+*Defined in [index.ts:225](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L225)*
 
 ##### Parameters:
 
@@ -632,7 +640,7 @@ Name | Type |
 
 •  **DEBUG**: 
 
-*Defined in [index.ts:9](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L9)*
+*Defined in [index.ts:15](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L15)*
 
 ___
 
@@ -640,7 +648,7 @@ ___
 
 •  **ERROR**: 
 
-*Defined in [index.ts:12](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L12)*
+*Defined in [index.ts:18](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L18)*
 
 ___
 
@@ -648,7 +656,7 @@ ___
 
 •  **INFO**: 
 
-*Defined in [index.ts:10](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L10)*
+*Defined in [index.ts:16](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L16)*
 
 ___
 
@@ -656,7 +664,7 @@ ___
 
 •  **SILENT**: 
 
-*Defined in [index.ts:7](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L7)*
+*Defined in [index.ts:13](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L13)*
 
 ___
 
@@ -664,7 +672,7 @@ ___
 
 •  **TRACE**: 
 
-*Defined in [index.ts:8](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L8)*
+*Defined in [index.ts:14](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L14)*
 
 ___
 
@@ -672,7 +680,7 @@ ___
 
 •  **WARN**: 
 
-*Defined in [index.ts:11](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L11)*
+*Defined in [index.ts:17](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L17)*
 
 
 <a name="globalsmd"></a>
@@ -684,6 +692,10 @@ ___
 # logvis
 
 ## Index
+
+### Namespaces
+
+* [\_\_global](#modules__globalmd)
 
 ### Enumerations
 
@@ -712,7 +724,7 @@ ___
 
 Ƭ  **Dictionary**\<TValue>: [IDictionary](#interfacesidictionarymd)\<TValue>
 
-*Defined in [index.ts:4](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L4)*
+*Defined in [index.ts:10](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L10)*
 
 #### Type parameters:
 
@@ -726,7 +738,7 @@ Name |
 
 • `Const` **logger**: [Logger](#classesloggermd) = new Logger()
 
-*Defined in [index.ts:215](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L215)*
+*Defined in [index.ts:239](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L239)*
 
 ___
 
@@ -734,9 +746,36 @@ ___
 
 • `Const` **namespaces**: [Dictionary](#dictionary)\<[Logger](#classesloggermd)>
 
-*Defined in [index.ts:15](https://github.com/idimetrix/logvis/blob/18c12c7/src/index.ts#L15)*
+*Defined in [index.ts:21](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L21)*
 
 # Interfaces
+
+
+<a name="interfaces__globalwindowmd"></a>
+
+**[logvis](#readmemd)**
+
+> [Globals](#globalsmd) / [\_\_global](#modules__globalmd) / Window
+
+## Interface: Window
+
+### Hierarchy
+
+* **Window**
+
+### Index
+
+#### Properties
+
+* [logger](#logger)
+
+### Properties
+
+#### logger
+
+•  **logger**: [Logger](#classesloggermd)
+
+*Defined in [index.ts:3](https://github.com/idimetrix/logvis/blob/701d573/src/index.ts#L3)*
 
 
 <a name="interfacesidictionarymd"></a>
@@ -760,3 +799,20 @@ Name |
 ### Indexable
 
 ▪ [key: string]: TValue
+
+# Modules
+
+
+<a name="modules__globalmd"></a>
+
+**[logvis](#readmemd)**
+
+> [Globals](#globalsmd) / \_\_global
+
+## Namespace: \_\_global
+
+### Index
+
+#### Interfaces
+
+* [Window](#interfaces__globalwindowmd)
