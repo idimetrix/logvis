@@ -31,7 +31,7 @@ export class Logger implements Console {
 
   public readonly LEVEL: typeof LEVEL = LEVEL;
 
-  public readonly Console: typeof Logger = Logger;
+  public readonly Console: any = Logger;
 
   constructor(ns: string = '') {
     this.namespaces.push(...ns.split('.'));

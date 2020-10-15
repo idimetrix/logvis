@@ -154,7 +154,7 @@ $ yarn add logvis
 
 \+ **new Logger**(`ns`: string): [Logger](#classesloggermd)
 
-*Defined in [index.ts:34](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L34)*
+*Defined in [index.ts:34](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L34)*
 
 ##### Parameters:
 
@@ -168,9 +168,9 @@ Name | Type | Default value |
 
 #### Console
 
-• `Readonly` **Console**: *typeof* [Logger](#classesloggermd) = Logger
+• `Readonly` **Console**: any = Logger
 
-*Defined in [index.ts:34](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L34)*
+*Defined in [index.ts:34](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L34)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 • `Readonly` **LEVEL**: *typeof* [LEVEL](#enumslevelmd) = LEVEL
 
-*Defined in [index.ts:32](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L32)*
+*Defined in [index.ts:32](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L32)*
 
 ### Accessors
 
@@ -186,13 +186,13 @@ ___
 
 • get **level**(): [LEVEL](#level)
 
-*Defined in [index.ts:59](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L59)*
+*Defined in [index.ts:59](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L59)*
 
 **Returns:** [LEVEL](#level)
 
 • set **level**(`level`: [LEVEL](#level)): void
 
-*Defined in [index.ts:63](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L63)*
+*Defined in [index.ts:63](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L63)*
 
 ##### Parameters:
 
@@ -208,7 +208,7 @@ ___
 
 • get **memory**(): any
 
-*Defined in [index.ts:48](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L48)*
+*Defined in [index.ts:48](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L48)*
 
 **Returns:** any
 
@@ -218,7 +218,7 @@ ___
 
 • get **namespace**(): string
 
-*Defined in [index.ts:52](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L52)*
+*Defined in [index.ts:52](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L52)*
 
 **Returns:** string
 
@@ -228,7 +228,7 @@ ___
 
 ▸ **assert**(`condition?`: undefined \| false \| true, ...`data`: any[]): void
 
-*Defined in [index.ts:105](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L105)*
+*Defined in [index.ts:105](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L105)*
 
 A simple assertion test that verifies whether `value` is truthy.
 If it is not, an `AssertionError` is thrown.
@@ -249,7 +249,7 @@ ___
 
 ▸ **clear**(): void
 
-*Defined in [index.ts:116](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L116)*
+*Defined in [index.ts:116](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L116)*
 
 When `stdout` is a TTY, calling `logger.clear()` will attempt to clear the TTY.
 When `stdout` is not a TTY, this method does nothing.
@@ -262,7 +262,7 @@ ___
 
 ▸ **count**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:125](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L125)*
+*Defined in [index.ts:125](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L125)*
 
 Maintains an internal counter specific to `label` and outputs to `stdout` the number of times `logger.count()` has been called with the given `label`.
 
@@ -280,7 +280,7 @@ ___
 
 ▸ **countReset**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:134](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L134)*
+*Defined in [index.ts:134](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L134)*
 
 Resets the internal counter specific to `label`.
 
@@ -298,7 +298,7 @@ ___
 
 ▸ **debug**(...`data`: any[]): void
 
-*Defined in [index.ts:143](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L143)*
+*Defined in [index.ts:143](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L143)*
 
 The `logger.debug()` function is an alias for {@link console.log()}.
 
@@ -316,7 +316,7 @@ ___
 
 ▸ **dir**(`item?`: any, `options?`: any): void
 
-*Defined in [index.ts:154](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L154)*
+*Defined in [index.ts:154](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L154)*
 
 Uses {@link util.inspect()} on `obj` and prints the resulting string to `stdout`.
 This function bypasses any custom `inspect()` function defined on `obj`.
@@ -336,7 +336,7 @@ ___
 
 ▸ **dirxml**(...`data`: any[]): void
 
-*Defined in [index.ts:163](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L163)*
+*Defined in [index.ts:163](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L163)*
 
 This method calls {@link console.log()} passing it the arguments received. Please note that this method does not produce any XML formatting
 
@@ -354,7 +354,7 @@ ___
 
 ▸ **disableAll**(): void
 
-*Defined in [index.ts:89](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L89)*
+*Defined in [index.ts:89](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L89)*
 
 **Returns:** void
 
@@ -364,7 +364,7 @@ ___
 
 ▸ **enableAll**(): void
 
-*Defined in [index.ts:85](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L85)*
+*Defined in [index.ts:85](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L85)*
 
 **Returns:** void
 
@@ -374,7 +374,7 @@ ___
 
 ▸ **error**(...`data`: any[]): void
 
-*Defined in [index.ts:173](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L173)*
+*Defined in [index.ts:173](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L173)*
 
 Prints to `stderr` with newline.
 
@@ -392,7 +392,7 @@ ___
 
 ▸ **exception**(`message?`: undefined \| string, ...`optionalParams`: any[]): void
 
-*Defined in [index.ts:180](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L180)*
+*Defined in [index.ts:180](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L180)*
 
 ##### Parameters:
 
@@ -409,7 +409,7 @@ ___
 
 ▸ **getLogger**(`ns`: string): [Logger](#classesloggermd)
 
-*Defined in [index.ts:77](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L77)*
+*Defined in [index.ts:77](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L77)*
 
 ##### Parameters:
 
@@ -425,7 +425,7 @@ ___
 
 ▸ **getLoggers**(): [Dictionary](#dictionary)\<[Logger](#classesloggermd)>
 
-*Defined in [index.ts:81](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L81)*
+*Defined in [index.ts:81](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L81)*
 
 **Returns:** [Dictionary](#dictionary)\<[Logger](#classesloggermd)>
 
@@ -435,7 +435,7 @@ ___
 
 ▸ **group**(...`data`: any[]): void
 
-*Defined in [index.ts:190](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L190)*
+*Defined in [index.ts:190](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L190)*
 
 Increases indentation of subsequent lines by two spaces.
 If one or more `label`s are provided, those are printed first without the additional indentation.
@@ -454,7 +454,7 @@ ___
 
 ▸ **groupCollapsed**(...`data`: any[]): void
 
-*Defined in [index.ts:200](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L200)*
+*Defined in [index.ts:200](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L200)*
 
 The `logger.groupCollapsed()` function is an alias for {@link console.group()}.
 
@@ -472,7 +472,7 @@ ___
 
 ▸ **groupEnd**(): void
 
-*Defined in [index.ts:210](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L210)*
+*Defined in [index.ts:210](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L210)*
 
 Decreases indentation of subsequent lines by two spaces.
 
@@ -484,7 +484,7 @@ ___
 
 ▸ **info**(...`data`: any[]): void
 
-*Defined in [index.ts:219](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L219)*
+*Defined in [index.ts:219](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L219)*
 
 The {@link console.info()} function is an alias for {@link console.log()}.
 
@@ -502,7 +502,7 @@ ___
 
 ▸ **log**(...`data`: any[]): void
 
-*Defined in [index.ts:229](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L229)*
+*Defined in [index.ts:229](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L229)*
 
 Prints to `stdout` with newline.
 
@@ -520,7 +520,7 @@ ___
 
 ▸ **noConflict**(): [Logger](#classesloggermd)
 
-*Defined in [index.ts:93](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L93)*
+*Defined in [index.ts:93](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L93)*
 
 **Returns:** [Logger](#classesloggermd)
 
@@ -530,7 +530,7 @@ ___
 
 ▸ **ns**(`ns`: string): [Logger](#classesloggermd)
 
-*Defined in [index.ts:69](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L69)*
+*Defined in [index.ts:69](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L69)*
 
 ##### Parameters:
 
@@ -546,7 +546,7 @@ ___
 
 ▸ **profile**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:300](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L300)*
+*Defined in [index.ts:300](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L300)*
 
 This method does not display anything unless used in the inspector.
  Starts a JavaScript CPU profile with an optional label.
@@ -565,7 +565,7 @@ ___
 
 ▸ **profileEnd**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:311](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L311)*
+*Defined in [index.ts:311](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L311)*
 
 This method does not display anything unless used in the inspector.
  Stops the current JavaScript CPU profiling session if one has been started and prints the report to the Profiles panel of the inspector.
@@ -584,7 +584,7 @@ ___
 
 ▸ **table**(`tabularData?`: any, `properties?`: string[]): void
 
-*Defined in [index.ts:240](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L240)*
+*Defined in [index.ts:240](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L240)*
 
 This method does not display anything unless used in the inspector.
  Prints to `stdout` the array `array` formatted as a table.
@@ -604,7 +604,7 @@ ___
 
 ▸ **time**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:249](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L249)*
+*Defined in [index.ts:249](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L249)*
 
 Starts a timer that can be used to compute the duration of an operation. Timers are identified by a unique `label`.
 
@@ -622,7 +622,7 @@ ___
 
 ▸ **timeEnd**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:258](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L258)*
+*Defined in [index.ts:258](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L258)*
 
 Stops a timer that was previously started by calling {@link console.time()} and prints the result to `stdout`.
 
@@ -640,7 +640,7 @@ ___
 
 ▸ **timeLog**(`label?`: undefined \| string, ...`data`: any[]): void
 
-*Defined in [index.ts:267](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L267)*
+*Defined in [index.ts:267](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L267)*
 
 For a timer that was previously started by calling {@link console.time()}, prints the elapsed time and other `data` arguments to `stdout`.
 
@@ -659,7 +659,7 @@ ___
 
 ▸ **timeStamp**(`label?`: undefined \| string): void
 
-*Defined in [index.ts:323](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L323)*
+*Defined in [index.ts:323](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L323)*
 
 This method does not display anything unless used in the inspector.
  Adds an event with the label `label` to the Timeline panel of the inspector.
@@ -678,7 +678,7 @@ ___
 
 ▸ **trace**(...`data`: any[]): void
 
-*Defined in [index.ts:277](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L277)*
+*Defined in [index.ts:277](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L277)*
 
 Prints to `stderr` the string 'Trace :', followed by the {@link util.format()} formatted message and stack trace to the current position in the code.
 
@@ -696,7 +696,7 @@ ___
 
 ▸ **warn**(...`data`: any[]): void
 
-*Defined in [index.ts:287](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L287)*
+*Defined in [index.ts:287](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L287)*
 
 The {@link console.warn()} function is an alias for {@link console.error()}.
 
@@ -736,7 +736,7 @@ Name | Type |
 
 •  **DEBUG**: 
 
-*Defined in [index.ts:15](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L15)*
+*Defined in [index.ts:15](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L15)*
 
 ___
 
@@ -744,7 +744,7 @@ ___
 
 •  **ERROR**: 
 
-*Defined in [index.ts:18](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L18)*
 
 ___
 
@@ -752,7 +752,7 @@ ___
 
 •  **INFO**: 
 
-*Defined in [index.ts:16](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L16)*
+*Defined in [index.ts:16](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L16)*
 
 ___
 
@@ -760,7 +760,7 @@ ___
 
 •  **SILENT**: 
 
-*Defined in [index.ts:13](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L13)*
+*Defined in [index.ts:13](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L13)*
 
 ___
 
@@ -768,7 +768,7 @@ ___
 
 •  **TRACE**: 
 
-*Defined in [index.ts:14](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L14)*
+*Defined in [index.ts:14](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L14)*
 
 ___
 
@@ -776,7 +776,7 @@ ___
 
 •  **WARN**: 
 
-*Defined in [index.ts:17](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L17)*
+*Defined in [index.ts:17](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L17)*
 
 
 <a name="globalsmd"></a>
@@ -820,7 +820,7 @@ ___
 
 Ƭ  **Dictionary**\<TValue>: [IDictionary](#interfacesidictionarymd)\<TValue>
 
-*Defined in [index.ts:10](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L10)*
+*Defined in [index.ts:10](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L10)*
 
 #### Type parameters:
 
@@ -834,7 +834,7 @@ Name |
 
 • `Const` **logger**: [Logger](#classesloggermd) = new Logger()
 
-*Defined in [index.ts:336](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L336)*
+*Defined in [index.ts:336](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L336)*
 
 ___
 
@@ -842,7 +842,7 @@ ___
 
 • `Const` **namespaces**: [Dictionary](#dictionary)\<[Logger](#classesloggermd)>
 
-*Defined in [index.ts:21](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L21)*
+*Defined in [index.ts:21](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L21)*
 
 # Interfaces
 
@@ -871,7 +871,7 @@ ___
 
 •  **logger**: [Logger](#classesloggermd)
 
-*Defined in [index.ts:3](https://github.com/idimetrix/logvis/blob/a04ce46/src/index.ts#L3)*
+*Defined in [index.ts:3](https://github.com/idimetrix/logvis/blob/426fb2f/src/index.ts#L3)*
 
 
 <a name="interfacesidictionarymd"></a>
