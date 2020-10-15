@@ -89,7 +89,7 @@ export class Logger implements Console {
   }
 
   public noConflict(): Logger {
-    return window ? window.logger : this;
+    return typeof window !== 'undefined' ? window.logger : this;
   }
 
   public assert(condition?: boolean, ...data: any[]): void {
