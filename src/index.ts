@@ -299,7 +299,7 @@ export class Logger implements Console {
    */
   public profile(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if(typeof (console as any).profile !== 'undefined') {
+    if (typeof (console as any).profile !== 'undefined') {
       (console as any).profile.call(console, label);
     }
   }
@@ -308,10 +308,10 @@ export class Logger implements Console {
    * This method does not display anything unless used in the inspector.
    *  Stops the current JavaScript CPU profiling session if one has been started and prints the report to the Profiles panel of the inspector.
    */
- public profileEnd(label?: string): void {
+  public profileEnd(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    if(typeof (console as any).profile !== 'undefined') {
+    if (typeof (console as any).profile !== 'undefined') {
       (console as any).profileEnd.call(console, label);
     }
   }
