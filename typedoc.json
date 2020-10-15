@@ -6,7 +6,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 110,
+			"id": 117,
 			"name": "__global",
 			"kind": 2,
 			"kindString": "Namespace",
@@ -15,7 +15,7 @@
 			},
 			"children": [
 				{
-					"id": 111,
+					"id": 118,
 					"name": "Window",
 					"kind": 256,
 					"kindString": "Interface",
@@ -24,7 +24,7 @@
 					},
 					"children": [
 						{
-							"id": 112,
+							"id": 119,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -50,7 +50,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								112
+								119
 							]
 						}
 					],
@@ -68,7 +68,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						111
+						118
 					]
 				}
 			],
@@ -218,7 +218,7 @@
 			},
 			"children": [
 				{
-					"id": 16,
+					"id": 17,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -227,7 +227,7 @@
 					},
 					"signatures": [
 						{
-							"id": 17,
+							"id": 18,
 							"name": "new Logger",
 							"kind": 16384,
 							"kindString": "Constructor signature",
@@ -236,7 +236,7 @@
 							},
 							"parameters": [
 								{
-									"id": 18,
+									"id": 19,
 									"name": "ns",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -260,10 +260,37 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 32,
-							"character": 46
+							"line": 34,
+							"character": 50
 						}
 					]
+				},
+				{
+					"id": 16,
+					"name": "Console",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPublic": true,
+						"isExported": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 34,
+							"character": 25
+						}
+					],
+					"type": {
+						"type": "query",
+						"queryType": {
+							"type": "reference",
+							"id": 12,
+							"name": "Logger"
+						}
+					},
+					"defaultValue": "Logger"
 				},
 				{
 					"id": 15,
@@ -293,7 +320,7 @@
 					"defaultValue": "LEVEL"
 				},
 				{
-					"id": 23,
+					"id": 24,
 					"name": "level",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -303,7 +330,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 24,
+							"id": 25,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -319,7 +346,7 @@
 					],
 					"setSignature": [
 						{
-							"id": 25,
+							"id": 26,
 							"name": "__set",
 							"kind": 1048576,
 							"kindString": "Set signature",
@@ -328,7 +355,7 @@
 							},
 							"parameters": [
 								{
-									"id": 26,
+									"id": 27,
 									"name": "level",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -351,18 +378,18 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 57,
+							"line": 59,
 							"character": 18
 						},
 						{
 							"fileName": "index.ts",
-							"line": 61,
+							"line": 63,
 							"character": 18
 						}
 					]
 				},
 				{
-					"id": 19,
+					"id": 20,
 					"name": "memory",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -372,7 +399,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 20,
+							"id": 21,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -388,13 +415,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 46,
+							"line": 48,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 21,
+					"id": 22,
 					"name": "namespace",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -404,7 +431,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 22,
+							"id": 23,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -420,13 +447,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 50,
+							"line": 52,
 							"character": 22
 						}
 					]
 				},
 				{
-					"id": 41,
+					"id": 42,
 					"name": "assert",
 					"kind": 2048,
 					"kindString": "Method",
@@ -436,16 +463,19 @@
 					},
 					"signatures": [
 						{
-							"id": 42,
+							"id": 43,
 							"name": "assert",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "A simple assertion test that verifies whether `value` is truthy.\nIf it is not, an `AssertionError` is thrown.\nIf provided, the error `message` is formatted using `util.format()` and used as the error message."
+							},
 							"parameters": [
 								{
-									"id": 43,
+									"id": 44,
 									"name": "condition",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -472,7 +502,7 @@
 									}
 								},
 								{
-									"id": 44,
+									"id": 45,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -498,13 +528,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 95,
+							"line": 105,
 							"character": 15
 						}
 					]
 				},
 				{
-					"id": 45,
+					"id": 46,
 					"name": "clear",
 					"kind": 2048,
 					"kindString": "Method",
@@ -514,12 +544,15 @@
 					},
 					"signatures": [
 						{
-							"id": 46,
+							"id": 47,
 							"name": "clear",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
+							},
+							"comment": {
+								"shortText": "When `stdout` is a TTY, calling `logger.clear()` will attempt to clear the TTY.\nWhen `stdout` is not a TTY, this method does nothing."
 							},
 							"type": {
 								"type": "intrinsic",
@@ -530,13 +563,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 102,
+							"line": 116,
 							"character": 14
 						}
 					]
 				},
 				{
-					"id": 47,
+					"id": 48,
 					"name": "count",
 					"kind": 2048,
 					"kindString": "Method",
@@ -546,16 +579,19 @@
 					},
 					"signatures": [
 						{
-							"id": 48,
+							"id": 49,
 							"name": "count",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "Maintains an internal counter specific to `label` and outputs to `stdout` the number of times `logger.count()` has been called with the given `label`."
+							},
 							"parameters": [
 								{
-									"id": 49,
+									"id": 50,
 									"name": "label",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -587,13 +623,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 108,
+							"line": 125,
 							"character": 14
 						}
 					]
 				},
 				{
-					"id": 50,
+					"id": 51,
 					"name": "countReset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -603,16 +639,19 @@
 					},
 					"signatures": [
 						{
-							"id": 51,
+							"id": 52,
 							"name": "countReset",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "Resets the internal counter specific to `label`."
+							},
 							"parameters": [
 								{
-									"id": 52,
+									"id": 53,
 									"name": "label",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -644,13 +683,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 114,
+							"line": 134,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 53,
+					"id": 54,
 					"name": "debug",
 					"kind": 2048,
 					"kindString": "Method",
@@ -660,16 +699,19 @@
 					},
 					"signatures": [
 						{
-							"id": 54,
+							"id": 55,
 							"name": "debug",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "The `logger.debug()` function is an alias for {@link console.log()}."
+							},
 							"parameters": [
 								{
-									"id": 55,
+									"id": 56,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -695,13 +737,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 120,
+							"line": 143,
 							"character": 14
 						}
 					]
 				},
 				{
-					"id": 56,
+					"id": 57,
 					"name": "dir",
 					"kind": 2048,
 					"kindString": "Method",
@@ -711,16 +753,19 @@
 					},
 					"signatures": [
 						{
-							"id": 57,
+							"id": 58,
 							"name": "dir",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "Uses {@link util.inspect()} on `obj` and prints the resulting string to `stdout`.\nThis function bypasses any custom `inspect()` function defined on `obj`."
+							},
 							"parameters": [
 								{
-									"id": 58,
+									"id": 59,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -734,7 +779,7 @@
 									}
 								},
 								{
-									"id": 59,
+									"id": 60,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -757,13 +802,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 127,
+							"line": 154,
 							"character": 12
 						}
 					]
 				},
 				{
-					"id": 60,
+					"id": 61,
 					"name": "dirxml",
 					"kind": 2048,
 					"kindString": "Method",
@@ -773,16 +818,19 @@
 					},
 					"signatures": [
 						{
-							"id": 61,
+							"id": 62,
 							"name": "dirxml",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "This method calls {@link console.log()} passing it the arguments received. Please note that this method does not produce any XML formatting"
+							},
 							"parameters": [
 								{
-									"id": 62,
+									"id": 63,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -808,13 +856,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 133,
+							"line": 163,
 							"character": 15
 						}
 					]
 				},
 				{
-					"id": 37,
+					"id": 38,
 					"name": "disableAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -824,7 +872,7 @@
 					},
 					"signatures": [
 						{
-							"id": 38,
+							"id": 39,
 							"name": "disableAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -840,13 +888,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 87,
+							"line": 89,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 35,
+					"id": 36,
 					"name": "enableAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -856,7 +904,7 @@
 					},
 					"signatures": [
 						{
-							"id": 36,
+							"id": 37,
 							"name": "enableAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -872,13 +920,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 83,
+							"line": 85,
 							"character": 18
 						}
 					]
 				},
 				{
-					"id": 63,
+					"id": 64,
 					"name": "error",
 					"kind": 2048,
 					"kindString": "Method",
@@ -888,363 +936,19 @@
 					},
 					"signatures": [
 						{
-							"id": 64,
+							"id": 65,
 							"name": "error",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
-							"parameters": [
-								{
-									"id": 65,
-									"name": "data",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isExported": true,
-										"isRest": true
-									},
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "any"
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 140,
-							"character": 14
-						}
-					]
-				},
-				{
-					"id": 66,
-					"name": "exception",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 67,
-							"name": "exception",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
+							"comment": {
+								"shortText": "Prints to `stderr` with newline."
 							},
 							"parameters": [
 								{
-									"id": 68,
-									"name": "message",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isExported": true,
-										"isOptional": true
-									},
-									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "undefined"
-											},
-											{
-												"type": "intrinsic",
-												"name": "string"
-											}
-										]
-									}
-								},
-								{
-									"id": 69,
-									"name": "optionalParams",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isExported": true,
-										"isRest": true
-									},
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "any"
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 147,
-							"character": 18
-						}
-					]
-				},
-				{
-					"id": 30,
-					"name": "getLogger",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 31,
-							"name": "getLogger",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"parameters": [
-								{
-									"id": 32,
-									"name": "ns",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isExported": true
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"id": 12,
-								"name": "Logger"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 75,
-							"character": 18
-						}
-					]
-				},
-				{
-					"id": 33,
-					"name": "getLoggers",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 34,
-							"name": "getLoggers",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"type": {
-								"type": "reference",
-								"id": 113,
-								"typeArguments": [
-									{
-										"type": "reference",
-										"id": 12,
-										"name": "Logger"
-									}
-								],
-								"name": "Dictionary"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 79,
-							"character": 19
-						}
-					]
-				},
-				{
-					"id": 70,
-					"name": "group",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 71,
-							"name": "group",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"parameters": [
-								{
-									"id": 72,
-									"name": "data",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isExported": true,
-										"isRest": true
-									},
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "any"
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 153,
-							"character": 14
-						}
-					]
-				},
-				{
-					"id": 73,
-					"name": "groupCollapsed",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 74,
-							"name": "groupCollapsed",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"parameters": [
-								{
-									"id": 75,
-									"name": "data",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isExported": true,
-										"isRest": true
-									},
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "any"
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 160,
-							"character": 23
-						}
-					]
-				},
-				{
-					"id": 76,
-					"name": "groupEnd",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 77,
-							"name": "groupEnd",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 167,
-							"character": 17
-						}
-					]
-				},
-				{
-					"id": 78,
-					"name": "info",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 79,
-							"name": "info",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"parameters": [
-								{
-									"id": 80,
+									"id": 66,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1271,13 +975,13 @@
 						{
 							"fileName": "index.ts",
 							"line": 173,
-							"character": 13
+							"character": 14
 						}
 					]
 				},
 				{
-					"id": 81,
-					"name": "log",
+					"id": 67,
+					"name": "exception",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {
@@ -1286,8 +990,8 @@
 					},
 					"signatures": [
 						{
-							"id": 82,
-							"name": "log",
+							"id": 68,
+							"name": "exception",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
@@ -1295,8 +999,31 @@
 							},
 							"parameters": [
 								{
-									"id": 83,
-									"name": "data",
+									"id": 69,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 70,
+									"name": "optionalParams",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {
@@ -1322,13 +1049,13 @@
 						{
 							"fileName": "index.ts",
 							"line": 180,
-							"character": 12
+							"character": 18
 						}
 					]
 				},
 				{
-					"id": 39,
-					"name": "noConflict",
+					"id": 31,
+					"name": "getLogger",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {
@@ -1337,41 +1064,8 @@
 					},
 					"signatures": [
 						{
-							"id": 40,
-							"name": "noConflict",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {
-								"isExported": true
-							},
-							"type": {
-								"type": "reference",
-								"id": 12,
-								"name": "Logger"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 91,
-							"character": 19
-						}
-					]
-				},
-				{
-					"id": 27,
-					"name": "ns",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 28,
-							"name": "ns",
+							"id": 32,
+							"name": "getLogger",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
@@ -1379,7 +1073,7 @@
 							},
 							"parameters": [
 								{
-									"id": 29,
+									"id": 33,
 									"name": "ns",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1402,13 +1096,505 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 67,
+							"line": 77,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 34,
+					"name": "getLoggers",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 35,
+							"name": "getLoggers",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 120,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 12,
+										"name": "Logger"
+									}
+								],
+								"name": "Dictionary"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 81,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 71,
+					"name": "group",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 72,
+							"name": "group",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Increases indentation of subsequent lines by two spaces.\nIf one or more `label`s are provided, those are printed first without the additional indentation."
+							},
+							"parameters": [
+								{
+									"id": 73,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 190,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "groupCollapsed",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 75,
+							"name": "groupCollapsed",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The `logger.groupCollapsed()` function is an alias for {@link console.group()}."
+							},
+							"parameters": [
+								{
+									"id": 76,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 200,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 77,
+					"name": "groupEnd",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 78,
+							"name": "groupEnd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Decreases indentation of subsequent lines by two spaces."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 210,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 79,
+					"name": "info",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 80,
+							"name": "info",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The {@link console.info()} function is an alias for {@link console.log()}."
+							},
+							"parameters": [
+								{
+									"id": 81,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 219,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 82,
+					"name": "log",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 83,
+							"name": "log",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Prints to `stdout` with newline."
+							},
+							"parameters": [
+								{
+									"id": 84,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 229,
+							"character": 12
+						}
+					]
+				},
+				{
+					"id": 40,
+					"name": "noConflict",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 41,
+							"name": "noConflict",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 12,
+								"name": "Logger"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 93,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 28,
+					"name": "ns",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 29,
+							"name": "ns",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 30,
+									"name": "ns",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 12,
+								"name": "Logger"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 69,
 							"character": 11
 						}
 					]
 				},
 				{
-					"id": 84,
+					"id": 105,
+					"name": "profile",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 106,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "This method does not display anything unless used in the inspector.\n Starts a JavaScript CPU profile with an optional label."
+							},
+							"parameters": [
+								{
+									"id": 107,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 300,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 108,
+					"name": "profileEnd",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 109,
+							"name": "profileEnd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "This method does not display anything unless used in the inspector.\n Stops the current JavaScript CPU profiling session if one has been started and prints the report to the Profiles panel of the inspector."
+							},
+							"parameters": [
+								{
+									"id": 110,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 311,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 85,
 					"name": "table",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1418,16 +1604,19 @@
 					},
 					"signatures": [
 						{
-							"id": 85,
+							"id": 86,
 							"name": "table",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "This method does not display anything unless used in the inspector.\n Prints to `stdout` the array `array` formatted as a table."
+							},
 							"parameters": [
 								{
-									"id": 86,
+									"id": 87,
 									"name": "tabularData",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1441,7 +1630,7 @@
 									}
 								},
 								{
-									"id": 87,
+									"id": 88,
 									"name": "properties",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1467,13 +1656,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 187,
+							"line": 240,
 							"character": 14
 						}
 					]
 				},
 				{
-					"id": 88,
+					"id": 89,
 					"name": "time",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1483,16 +1672,19 @@
 					},
 					"signatures": [
 						{
-							"id": 89,
+							"id": 90,
 							"name": "time",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "Starts a timer that can be used to compute the duration of an operation. Timers are identified by a unique `label`."
+							},
 							"parameters": [
 								{
-									"id": 90,
+									"id": 91,
 									"name": "label",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1524,13 +1716,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 193,
+							"line": 249,
 							"character": 13
 						}
 					]
 				},
 				{
-					"id": 91,
+					"id": 92,
 					"name": "timeEnd",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1540,16 +1732,19 @@
 					},
 					"signatures": [
 						{
-							"id": 92,
+							"id": 93,
 							"name": "timeEnd",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "Stops a timer that was previously started by calling {@link console.time()} and prints the result to `stdout`."
+							},
 							"parameters": [
 								{
-									"id": 93,
+									"id": 94,
 									"name": "label",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1581,13 +1776,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 199,
+							"line": 258,
 							"character": 16
 						}
 					]
 				},
 				{
-					"id": 94,
+					"id": 95,
 					"name": "timeLog",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1597,16 +1792,19 @@
 					},
 					"signatures": [
 						{
-							"id": 95,
+							"id": 96,
 							"name": "timeLog",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "For a timer that was previously started by calling {@link console.time()}, prints the elapsed time and other `data` arguments to `stdout`."
+							},
 							"parameters": [
 								{
-									"id": 96,
+									"id": 97,
 									"name": "label",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1629,7 +1827,7 @@
 									}
 								},
 								{
-									"id": 97,
+									"id": 98,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1655,13 +1853,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 205,
+							"line": 267,
 							"character": 16
 						}
 					]
 				},
 				{
-					"id": 98,
+					"id": 111,
 					"name": "timeStamp",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1671,16 +1869,19 @@
 					},
 					"signatures": [
 						{
-							"id": 99,
+							"id": 112,
 							"name": "timeStamp",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "This method does not display anything unless used in the inspector.\n Adds an event with the label `label` to the Timeline panel of the inspector."
+							},
 							"parameters": [
 								{
-									"id": 100,
+									"id": 113,
 									"name": "label",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1712,13 +1913,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 212,
+							"line": 323,
 							"character": 18
 						}
 					]
 				},
 				{
-					"id": 101,
+					"id": 99,
 					"name": "trace",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1728,16 +1929,19 @@
 					},
 					"signatures": [
 						{
-							"id": 102,
+							"id": 100,
 							"name": "trace",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "Prints to `stderr` the string 'Trace :', followed by the {@link util.format()} formatted message and stack trace to the current position in the code."
+							},
 							"parameters": [
 								{
-									"id": 103,
+									"id": 101,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1763,13 +1967,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 218,
+							"line": 277,
 							"character": 14
 						}
 					]
 				},
 				{
-					"id": 104,
+					"id": 102,
 					"name": "warn",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1779,16 +1983,19 @@
 					},
 					"signatures": [
 						{
-							"id": 105,
+							"id": 103,
 							"name": "warn",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"shortText": "The {@link console.warn()} function is an alias for {@link console.error()}."
+							},
 							"parameters": [
 								{
-									"id": 106,
+									"id": 104,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1814,7 +2021,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 225,
+							"line": 287,
 							"character": 13
 						}
 					]
@@ -1825,13 +2032,14 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						16
+						17
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
+						16,
 						15
 					]
 				},
@@ -1839,42 +2047,44 @@
 					"title": "Accessors",
 					"kind": 262144,
 					"children": [
-						23,
-						19,
-						21
+						24,
+						20,
+						22
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						41,
-						45,
-						47,
-						50,
-						53,
-						56,
-						60,
-						37,
-						35,
-						63,
-						66,
-						30,
-						33,
-						70,
-						73,
-						76,
-						78,
-						81,
-						39,
-						27,
-						84,
-						88,
-						91,
-						94,
-						98,
-						101,
-						104
+						42,
+						46,
+						48,
+						51,
+						54,
+						57,
+						61,
+						38,
+						36,
+						64,
+						67,
+						31,
+						34,
+						71,
+						74,
+						77,
+						79,
+						82,
+						40,
+						28,
+						105,
+						108,
+						85,
+						89,
+						92,
+						95,
+						111,
+						99,
+						102
 					]
 				}
 			],
@@ -1950,7 +2160,7 @@
 			]
 		},
 		{
-			"id": 113,
+			"id": 120,
 			"name": "Dictionary",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -1959,7 +2169,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 114,
+					"id": 121,
 					"name": "TValue",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -1988,7 +2198,7 @@
 			}
 		},
 		{
-			"id": 116,
+			"id": 123,
 			"name": "logger",
 			"kind": 32,
 			"kindString": "Variable",
@@ -1999,7 +2209,7 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 239,
+					"line": 336,
 					"character": 19
 				}
 			],
@@ -2011,7 +2221,7 @@
 			"defaultValue": "new Logger()"
 		},
 		{
-			"id": 115,
+			"id": 122,
 			"name": "namespaces",
 			"kind": 32,
 			"kindString": "Variable",
@@ -2028,7 +2238,7 @@
 			],
 			"type": {
 				"type": "reference",
-				"id": 113,
+				"id": 120,
 				"typeArguments": [
 					{
 						"type": "reference",
@@ -2045,7 +2255,7 @@
 			"title": "Namespaces",
 			"kind": 2,
 			"children": [
-				110
+				117
 			]
 		},
 		{
@@ -2073,15 +2283,15 @@
 			"title": "Type aliases",
 			"kind": 4194304,
 			"children": [
-				113
+				120
 			]
 		},
 		{
 			"title": "Variables",
 			"kind": 32,
 			"children": [
-				116,
-				115
+				123,
+				122
 			]
 		}
 	]
