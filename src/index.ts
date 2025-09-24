@@ -9,6 +9,34 @@ export interface IDictionary<TValue> {
 }
 export type Dictionary<TValue> = IDictionary<TValue>;
 
+// Type-safe console interface
+interface TypedConsole {
+  assert(condition?: boolean, ...data: unknown[]): void;
+  clear(): void;
+  count(label?: string): void;
+  countReset(label?: string): void;
+  debug(...data: unknown[]): void;
+  dir(item?: unknown, options?: unknown): void;
+  dirxml(...data: unknown[]): void;
+  error(...data: unknown[]): void;
+  exception?(message?: string, ...optionalParams: unknown[]): void;
+  group(...data: unknown[]): void;
+  groupCollapsed(...data: unknown[]): void;
+  groupEnd(): void;
+  info(...data: unknown[]): void;
+  log(...data: unknown[]): void;
+  table(tabularData?: unknown, properties?: string[]): void;
+  time(label?: string): void;
+  timeEnd(label?: string): void;
+  timeLog(label?: string, ...data: unknown[]): void;
+  timeStamp?(label?: string): void;
+  trace(...data: unknown[]): void;
+  warn(...data: unknown[]): void;
+  memory?: unknown;
+  profile?(label?: string): void;
+  profileEnd?(label?: string): void;
+}
+
 export enum LEVEL {
   SILENT,
   TRACE,
@@ -20,7 +48,7 @@ export enum LEVEL {
 
 const namespaces: Dictionary<Logger> = {};
 
-export class Logger implements Console {
+export class Logger implements TypedConsole {
   // --- static
 
   private readonly namespaces: string[] = [];
@@ -31,7 +59,7 @@ export class Logger implements Console {
 
   public readonly LEVEL: typeof LEVEL = LEVEL;
 
-  public readonly Console: any = Logger;
+  public readonly Console: typeof Logger = Logger;
 
   constructor(ns: string = '') {
     this.namespaces.push(...ns.split('.'));
@@ -45,8 +73,8 @@ export class Logger implements Console {
 
   // --- getters / setters
 
-  public get memory(): any {
-    return console.memory;
+  public get memory(): unknown {
+    return (console as TypedConsole).memory;
   }
 
   public get namespace(): string {
@@ -102,11 +130,12 @@ export class Logger implements Console {
    * If provided, the error `message` is formatted using `util.format()` and used as the error message.
    */
 
-  public assert(condition?: boolean, ...data: any[]): void {
+  public assert(condition?: boolean, ...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.assert.call(console, condition, ...data);
+    console.assert(condition, ...safeData);
   }
 
   /**
@@ -140,68 +169,76 @@ export class Logger implements Console {
   /**
    * The `logger.debug()` function is an alias for {@link console.log()}.
    */
-  public debug(...data: any[]): void {
+  public debug(...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.debug.call(console, ...data);
+    console.debug(...safeData);
   }
 
   /**
    * Uses {@link util.inspect()} on `obj` and prints the resulting string to `stdout`.
    * This function bypasses any custom `inspect()` function defined on `obj`.
    */
-  public dir(item?: any, options?: any): void {
+  public dir(item?: unknown, options?: unknown): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    console.dir.call(console, item, options);
+    console.dir(item, options);
   }
 
   /**
    * This method calls {@link console.log()} passing it the arguments received. Please note that this method does not produce any XML formatting
    */
-  public dirxml(...data: any[]): void {
+  public dirxml(...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.dirxml.call(console, ...data);
+    console.dirxml(...safeData);
   }
 
   /**
    * Prints to `stderr` with newline.
    */
-  public error(...data: any[]): void {
+  public error(...data: unknown[]): void {
     if (!this.validate(LEVEL.ERROR)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.error.call(console, ...data);
+    console.error(...safeData);
   }
 
-  public exception(message?: string, ...optionalParams: any[]): void {
+  public exception(message?: string, ...optionalParams: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    console.exception.call(console, message, ...optionalParams);
+    const typedConsole = console as TypedConsole;
+    if (typedConsole.exception) {
+      typedConsole.exception(message, ...optionalParams);
+    }
   }
 
   /**
    * Increases indentation of subsequent lines by two spaces.
    * If one or more `label`s are provided, those are printed first without the additional indentation.
    */
-  public group(...data: any[]): void {
+  public group(...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.group.call(console, ...data);
+    console.group(...safeData);
   }
 
   /**
    * The `logger.groupCollapsed()` function is an alias for {@link console.group()}.
    */
-  public groupCollapsed(...data: any[]): void {
+  public groupCollapsed(...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.groupCollapsed.call(console, ...data);
+    console.groupCollapsed(...safeData);
   }
 
   /**
@@ -216,31 +253,33 @@ export class Logger implements Console {
   /**
    * The {@link console.info()} function is an alias for {@link console.log()}.
    */
-  public info(...data: any[]): void {
+  public info(...data: unknown[]): void {
     if (!this.validate(LEVEL.INFO)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.info.call(console, ...data);
+    console.info(...safeData);
   }
 
   /**
    * Prints to `stdout` with newline.
    */
-  public log(...data: any[]): void {
+  public log(...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.log.call(console, ...data);
+    console.log(...safeData);
   }
 
   /**
    * This method does not display anything unless used in the inspector.
    *  Prints to `stdout` the array `array` formatted as a table.
    */
-  public table(tabularData?: any, properties?: string[]): void {
+  public table(tabularData?: unknown, properties?: string[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    console.table.call(console, tabularData, properties);
+    console.table(tabularData, properties);
   }
 
   /**
@@ -249,7 +288,7 @@ export class Logger implements Console {
   public time(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    console.time.call(console, label);
+    console.time(label);
   }
 
   /**
@@ -258,37 +297,40 @@ export class Logger implements Console {
   public timeEnd(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    console.timeEnd.call(console, label);
+    console.timeEnd(label);
   }
 
   /**
    * For a timer that was previously started by calling {@link console.time()}, prints the elapsed time and other `data` arguments to `stdout`.
    */
-  public timeLog(label?: string, ...data: any[]): void {
+  public timeLog(label?: string, ...data: unknown[]): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.timeLog.call(console, label, ...data);
+    console.timeLog(label, ...safeData);
   }
 
   /**
    * Prints to `stderr` the string 'Trace :', followed by the {@link util.format()} formatted message and stack trace to the current position in the code.
    */
-  public trace(...data: any[]): void {
+  public trace(...data: unknown[]): void {
     if (!this.validate(LEVEL.TRACE)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.trace.call(console, ...data);
+    console.trace(...safeData);
   }
 
   /**
    * The {@link console.warn()} function is an alias for {@link console.error()}.
    */
-  public warn(...data: any[]): void {
+  public warn(...data: unknown[]): void {
     if (!this.validate(LEVEL.WARN)) return;
-    if (this.namespace) (data = data || []).unshift(this.namespace);
+    const safeData = data || [];
+    if (this.namespace) safeData.unshift(this.namespace);
 
-    console.warn.call(console, ...data);
+    console.warn(...safeData);
   }
 
   // --- Inspector mode only ---
@@ -299,8 +341,9 @@ export class Logger implements Console {
    */
   public profile(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
-    if (typeof (console as any).profile !== 'undefined') {
-      (console as any).profile.call(console, label);
+    const typedConsole = console as TypedConsole;
+    if (typedConsole.profile) {
+      typedConsole.profile(label);
     }
   }
 
@@ -311,8 +354,9 @@ export class Logger implements Console {
   public profileEnd(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    if (typeof (console as any).profile !== 'undefined') {
-      (console as any).profileEnd.call(console, label);
+    const typedConsole = console as TypedConsole;
+    if (typedConsole.profileEnd) {
+      typedConsole.profileEnd(label);
     }
   }
 
@@ -323,7 +367,10 @@ export class Logger implements Console {
   public timeStamp(label?: string): void {
     if (!this.validate(LEVEL.DEBUG)) return;
 
-    console.timeStamp.call(console, label);
+    const typedConsole = console as TypedConsole;
+    if (typedConsole.timeStamp) {
+      typedConsole.timeStamp(label);
+    }
   }
 
   // ---

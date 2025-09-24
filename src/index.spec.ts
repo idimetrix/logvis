@@ -2,7 +2,7 @@ import test, { ExecutionContext } from 'ava';
 
 import { logger } from './';
 
-test('Logger', async (t: ExecutionContext<any>): Promise<void> => {
+test('Logger', (t: ExecutionContext): void => {
   logger.enableAll();
   t.is(logger.level, logger.LEVEL.ERROR);
 

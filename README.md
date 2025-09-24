@@ -56,7 +56,7 @@
 
 ## logvis
 
-#### TypeScript/JavaScript promise queue client library with concurrency control
+#### Minimal lightweight logging for TypeScript/JavaScript, adding reliable log level methods to any available console.log methods
 
 ## Installation
 

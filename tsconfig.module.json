@@ -1,11 +1,13 @@
 {
-  "extends": "./tsconfig",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2022",
     "outDir": "build/module",
-    "module": "ES6"
+    "module": "ES2022"
   },
   "exclude": [
+    "**/*.spec.ts", 
+    "**/*.test.ts",
     "node_modules/**"
   ]
 }
